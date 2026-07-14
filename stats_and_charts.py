@@ -1,5 +1,3 @@
-# 05_stats_and_charts.py
-
 import pandas as pd
 import matplotlib
 matplotlib.use("Agg")

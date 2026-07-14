@@ -1,5 +1,3 @@
-# 04_train_model.py
-
 import joblib, json, time, numpy as np, pandas as pd
 from sklearn.model_selection import train_test_split, KFold, cross_val_score
 from sklearn.pipeline import Pipeline

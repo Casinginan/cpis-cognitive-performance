@@ -1,6 +1,3 @@
-# app/dashboard.py
-# run with: streamlit run app/dashboard.py
-
 import os, json, joblib
 import numpy as np
 import pandas as pd
@@ -147,7 +144,6 @@ def histogram_with_marker(df, column, label, user_value=None):
     return fig
 
 
-# --- app setup ---
 st.set_page_config(page_title="Sleep & Cognition Field Notes", layout="wide")
 
 CUSTOM_CSS = """
@@ -225,7 +221,6 @@ tab0, tab1, tab2, tab3, tab4 = st.tabs([
 ])
 
 
-# ── TAB 0: POPULATION OVERVIEW ──────────────────────────────────────────────
 with tab0:
     st.markdown("##### What everyone else looks like")
     st.markdown(
@@ -261,7 +256,6 @@ with tab0:
             unsafe_allow_html=True)
 
 
-# ── TAB 1: PREDICT ───────────────────────────────────────────────────────────
 with tab1:
     st.markdown("##### Today's intake")
     c1, c2, c3 = st.columns(3)
