@@ -1,0 +1,30 @@
+{
+  "chosen_model": "random_forest",
+  "all_results": {
+    "linear_regression": {
+      "cv_r2_mean": 0.7808,
+      "cv_r2_std": 0.0229,
+      "test_mae": 3.528,
+      "test_rmse": 4.547,
+      "test_r2": 0.801,
+      "seconds": 0.14
+    },
+    "random_forest": {
+      "cv_r2_mean": 0.7311,
+      "cv_r2_std": 0.0242,
+      "test_mae": 4.001,
+      "test_rmse": 5.022,
+      "test_r2": 0.7573,
+      "seconds": 1.73
+    },
+    "gradient_boosting": {
+      "cv_r2_mean": 0.7193,
+      "cv_r2_std": 0.0264,
+      "test_mae": 4.348,
+      "test_rmse": 5.582,
+      "test_r2": 0.7001,
+      "seconds": 0.83
+    }
+  },
+  "trained_on": "real_kaggle_data"
+}

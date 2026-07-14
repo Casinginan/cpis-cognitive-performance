@@ -1,0 +1,24 @@
+{
+  "feature_importance": {
+    "Sleep quality": 0.5855537869299492,
+    "Stress level": 0.1356896361793038,
+    "Diet quality": 0.08050952648429147,
+    "Sleep duration": 0.05503690774115937,
+    "Screen time": 0.04596798184861594,
+    "Age": 0.04430809422929332,
+    "Physical activity": 0.02947619115038159,
+    "Caffeine intake": 0.0234578754370054,
+    "Occupation (worker)": 0.0
+  },
+  "shap_importance": {
+    "Sleep quality": 5.853620134888213,
+    "Diet quality": 1.4150576637542178,
+    "Stress level": 1.3284131897243823,
+    "Age": 0.7557920457484235,
+    "Screen time": 0.7512218158747394,
+    "Physical activity": 0.5327791345587776,
+    "Sleep duration": 0.46273260634103025,
+    "Caffeine intake": 0.2787626910384731,
+    "Occupation (worker)": 0.0
+  }
+}

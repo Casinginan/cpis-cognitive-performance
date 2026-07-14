@@ -1,0 +1,13 @@
+pandas
+numpy
+scikit-learn
+scipy
+matplotlib
+shap
+joblib
+pydantic
+fastapi
+uvicorn
+streamlit
+plotly
+kagglehub
