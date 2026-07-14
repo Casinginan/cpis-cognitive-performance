@@ -40,12 +40,12 @@ pip install -r requirements.txt
 
 Run in order (each script saves output for the next one):
 ```
-python 01_get_data.py
-python 02_build_features.py
-python 03_clean_and_validate.py
-python 04_train_model.py
-python 05_stats_and_charts.py
-python 06_explainability.py
+python get_data.py
+python build_features.py
+python clean_and_validate.py
+python train_model.py
+python stats_and_charts.py
+python explainability.py
 ```
 
 Then either:
