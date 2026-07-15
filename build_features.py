@@ -57,7 +57,6 @@ def build_features(raw, source):
     df["occupation_type"] = raw["Occupation"].map(JOB_TO_CATEGORY).fillna("worker")
     df["_source"] = source
 
-    # simulated columns - not in the real dataset, generated from real columns
     screen_base = 9 - 0.3 * (df["sleep_quality_score"] - 5) - 0.02 * (df["physical_activity_minutes"] - 50)
     df["screen_time_hours"] = np.clip(screen_base + np.random.normal(0, 1.5, len(df)), 0, 16).round(1)
 

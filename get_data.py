@@ -1,7 +1,3 @@
-# gets the sleep/lifestyle dataset. now that we have the real CSV from Kaggle,
-# this just confirms it's there and prints a summary. the file was uploaded
-# directly to data/sleep_data_real.csv so no download needed.
-
 import pandas as pd
 import os
 

@@ -54,20 +54,19 @@ def explain_one_prediction(model, row):
     return explanations
 
 
-# --- project plan data ---
 PROJECT_START = datetime(2026, 5, 18)
 PROJECT_PHASES = [
-    {"phase": "Data sourcing", "script": "01_get_data.py", "start_day": 0, "duration": 2,
+    {"phase": "Data sourcing", "script": "get_data.py", "start_day": 0, "duration": 2,
      "status": "Done", "note": "Real Kaggle sleep/lifestyle dataset (374 people)"},
-    {"phase": "Feature engineering", "script": "02_build_features.py", "start_day": 2, "duration": 3,
+    {"phase": "Feature engineering", "script": "build_features.py", "start_day": 2, "duration": 3,
      "status": "Done", "note": "Mapped real columns to schema, simulated 3 missing features, built target formula"},
-    {"phase": "Validation & bias audit", "script": "03_clean_and_validate.py", "start_day": 5, "duration": 2,
+    {"phase": "Validation & bias audit", "script": "clean_and_validate.py", "start_day": 5, "duration": 2,
      "status": "Done", "note": "Pydantic schema enforcement, cleaning, occupation/age balance checks"},
-    {"phase": "Model training", "script": "04_train_model.py", "start_day": 7, "duration": 2,
+    {"phase": "Model training", "script": "train_model.py", "start_day": 7, "duration": 2,
      "status": "Done", "note": "Linear/RF/GB comparison, 5-fold CV, picked Random Forest"},
-    {"phase": "Statistical analysis", "script": "05_stats_and_charts.py", "start_day": 9, "duration": 2,
+    {"phase": "Statistical analysis", "script": "stats_and_charts.py", "start_day": 9, "duration": 2,
      "status": "Done", "note": "Correlation matrix, distributions, hypothesis tests"},
-    {"phase": "Explainability (SHAP)", "script": "06_explainability.py", "start_day": 11, "duration": 2,
+    {"phase": "Explainability (SHAP)", "script": "explainability.py", "start_day": 11, "duration": 2,
      "status": "Done", "note": "Feature importance + SHAP + plain-english explanations"},
     {"phase": "API + dashboard", "script": "api/main.py, app/dashboard.py", "start_day": 13, "duration": 4,
      "status": "In progress", "note": "FastAPI endpoints + Streamlit UI, 5-tab design"},
@@ -224,8 +223,7 @@ tab0, tab1, tab2, tab3, tab4 = st.tabs([
 with tab0:
     st.markdown("##### What everyone else looks like")
     st.markdown(
-        f'<p class="field-label">{len(df) if df is not None else 0} people in this sample '
-        f'(real Kaggle data) — look here first, then see where you land on the New Entry tab</p>',
+        f'<p class="field-label">{len(df) if df is not None else 0} people in this sample ',
         unsafe_allow_html=True)
 
     if df is not None:
@@ -328,7 +326,6 @@ with tab1:
                 use_container_width=True)
 
 
-# ── TAB 2: MODEL LOGIC ───────────────────────────────────────────────────────
 with tab2:
     st.markdown("##### What the model actually pays attention to")
     c1, c2 = st.columns(2)
@@ -363,7 +360,6 @@ with tab2:
         st.warning("Model results not found. Run `python 04_train_model.py` first, then `05` and `06`.")
 
 
-# ── TAB 3: DATA & BIAS ───────────────────────────────────────────────────────
 with tab3:
     st.markdown("##### Sample log")
     if df is not None:
@@ -397,7 +393,6 @@ with tab3:
                 f"so predictions for those groups are extrapolations, not interpolations.")
 
 
-# ── TAB 4: PROJECT PLAN ──────────────────────────────────────────────────────
 with tab4:
     st.markdown("##### How this project was actually built")
     st.markdown(
@@ -441,7 +436,7 @@ st.markdown("""
         padding-top:0.8rem;
         letter-spacing:0.02em;
     ">
-    ⚠️ Caution — This is a predictive insight tool only and is <em>not</em> a medical diagnosis.
+    Caution — This is a predictive insight tool only and is <em>not</em> a medical diagnosis.
     Results should not be used to assess, treat, or make decisions about any individual's health or cognitive condition.
     Always consult a qualified healthcare professional for medical advice.
     </p>""", unsafe_allow_html=True)

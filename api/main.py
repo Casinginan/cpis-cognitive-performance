@@ -1,6 +1,3 @@
-# api/main.py
-# run with: cd api && uvicorn main:app --reload
-
 import os, logging, joblib
 import numpy as np
 import pandas as pd
